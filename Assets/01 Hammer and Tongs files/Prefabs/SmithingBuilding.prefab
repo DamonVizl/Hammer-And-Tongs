@@ -84,7 +84,7 @@ MonoBehaviour:
   isExpanded: 1
   target:
     target: 3
-    gameObject: {fileID: 0}
+    gameObject: {fileID: 8560371134620440379}
     global:
       allowTypesMask: 512
       name: 
@@ -186,7 +186,7 @@ MonoBehaviour:
   isExpanded: 1
   target:
     target: 3
-    gameObject: {fileID: 0}
+    gameObject: {fileID: 8560371134620440379}
     global:
       allowTypesMask: 512
       name: 
@@ -626,6 +626,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db32cc63bc963b846b1aeaa47819fe1d, type: 3}
+--- !u!1 &8560371134620440379 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3812978790587349438, guid: db32cc63bc963b846b1aeaa47819fe1d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4766743766298111621}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9045300208832826753 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4585153353696076548, guid: db32cc63bc963b846b1aeaa47819fe1d,
