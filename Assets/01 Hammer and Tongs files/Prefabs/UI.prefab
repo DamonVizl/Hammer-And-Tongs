@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 335886963}
   - component: {fileID: 335886962}
   m_Layer: 5
-  m_Name: Coins
+  m_Name: CoinsCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 414717051}
   - component: {fileID: 414717050}
   m_Layer: 5
-  m_Name: CoinCount
+  m_Name: CoinCounterText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,6 +161,177 @@ MonoBehaviour:
     global:
       allowTypesMask: -1
       name: Coins
+    local:
+      allowTypesMask: -1
+      name: 
+      targetType: 2
+      targetObject: {fileID: 0}
+    list:
+      targetType: 3
+      targetObject: {fileID: 0}
+      select: 1
+      index: 0
+--- !u!1 &1242446926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1242446927}
+  - component: {fileID: 1242446929}
+  - component: {fileID: 1242446928}
+  m_Layer: 5
+  m_Name: IronOreCounter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1242446927
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242446926}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1521579690}
+  m_Father: {fileID: 8313457265701858421}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 40, y: 6}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!222 &1242446929
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242446926}
+  m_CullTransparentMesh: 1
+--- !u!114 &1242446928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242446926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f4c93eea943addd4aa6b68ee03b4445d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1521579689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1521579690}
+  - component: {fileID: 1521579692}
+  - component: {fileID: 1521579691}
+  m_Layer: 5
+  m_Name: IronCounterText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1521579690
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521579689}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1242446927}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 180, y: 0}
+  m_SizeDelta: {x: 300, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1521579692
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521579689}
+  m_CullTransparentMesh: 1
+--- !u!114 &1521579691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521579689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e027c06daac734c2ebaed51fc6752685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+  format: '{0}'
+  variable:
+    variableType: 0
+    global:
+      allowTypesMask: -1
+      name: IronOre
     local:
       allowTypesMask: -1
       name: 
@@ -3214,6 +3385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 21300000, guid: 90ef21589078a9d4aaa982eb1258d332, type: 3}
 --- !u!225 &8313457265080407958
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3263,7 +3435,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 675.6}
+  m_SizeDelta: {x: 469, y: 852}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &8313457265158812056
 CanvasRenderer:
@@ -3393,6 +3565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 21300000, guid: 90ef21589078a9d4aaa982eb1258d332, type: 3}
 --- !u!225 &8313457265215236237
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3585,6 +3758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 21300000, guid: 90ef21589078a9d4aaa982eb1258d332, type: 3}
 --- !u!225 &8313457265258651021
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3777,6 +3951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 21300000, guid: 90ef21589078a9d4aaa982eb1258d332, type: 3}
 --- !u!225 &8313457265332916221
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3969,6 +4144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 0}
 --- !u!225 &8313457265369339591
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4341,6 +4517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 21300000, guid: 90ef21589078a9d4aaa982eb1258d332, type: 3}
 --- !u!225 &8313457265455503141
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4443,6 +4620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 21300000, guid: 90ef21589078a9d4aaa982eb1258d332, type: 3}
 --- !u!225 &8313457265456221862
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4725,6 +4903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 21300000, guid: 90ef21589078a9d4aaa982eb1258d332, type: 3}
 --- !u!225 &8313457265535964353
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4827,6 +5006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 21300000, guid: 90ef21589078a9d4aaa982eb1258d332, type: 3}
 --- !u!225 &8313457265539935398
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4929,6 +5109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 21300000, guid: 90ef21589078a9d4aaa982eb1258d332, type: 3}
 --- !u!225 &8313457265551095548
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5031,6 +5212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 21300000, guid: 90ef21589078a9d4aaa982eb1258d332, type: 3}
 --- !u!225 &8313457265554111581
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5133,6 +5315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 21300000, guid: 90ef21589078a9d4aaa982eb1258d332, type: 3}
 --- !u!225 &8313457265588769919
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5235,6 +5418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 21300000, guid: 90ef21589078a9d4aaa982eb1258d332, type: 3}
 --- !u!225 &8313457265607644209
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5337,6 +5521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 21300000, guid: 90ef21589078a9d4aaa982eb1258d332, type: 3}
 --- !u!225 &8313457265637684853
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5472,14 +5657,15 @@ RectTransform:
   - {fileID: 8313457265291083651}
   - {fileID: 8313457266265005879}
   - {fileID: 335886961}
+  - {fileID: 1242446927}
   m_Father: {fileID: 8313457265158812058}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 25, y: -25}
-  m_SizeDelta: {x: 750, y: 200}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -42.5}
+  m_SizeDelta: {x: 430, y: 200}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &8313457265701858427
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5608,6 +5794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 21300000, guid: 90ef21589078a9d4aaa982eb1258d332, type: 3}
 --- !u!225 &8313457265771568204
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5710,6 +5897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 0}
 --- !u!225 &8313457265792650576
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5992,6 +6180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 21300000, guid: 90ef21589078a9d4aaa982eb1258d332, type: 3}
 --- !u!225 &8313457266064831121
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6094,6 +6283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 21300000, guid: 90ef21589078a9d4aaa982eb1258d332, type: 3}
 --- !u!225 &8313457266126678954
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6386,6 +6576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 21300000, guid: 90ef21589078a9d4aaa982eb1258d332, type: 3}
 --- !u!225 &8313457266268211047
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -7118,6 +7309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 21300000, guid: 90ef21589078a9d4aaa982eb1258d332, type: 3}
 --- !u!225 &8313457266855598950
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -7220,6 +7412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 21300000, guid: 90ef21589078a9d4aaa982eb1258d332, type: 3}
 --- !u!225 &8313457266889220201
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -7322,6 +7515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 0}
 --- !u!225 &8313457266954677228
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -7389,8 +7583,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 61}
-  m_SizeDelta: {x: 750, y: 327.534}
+  m_AnchoredPosition: {x: 0, y: 32}
+  m_SizeDelta: {x: 430, y: 537.19}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &8313457266989473567
 CanvasRenderer:
@@ -7634,6 +7828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 8313457266176516249}
+  defaultSprite: {fileID: 21300000, guid: 90ef21589078a9d4aaa982eb1258d332, type: 3}
 --- !u!225 &8313457267070411530
 CanvasGroup:
   m_ObjectHideFlags: 0

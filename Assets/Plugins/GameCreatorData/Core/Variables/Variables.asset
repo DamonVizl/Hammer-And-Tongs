@@ -155,7 +155,7 @@ MonoBehaviour:
     varStr:
       value: 
     varNum:
-      value: 1
+      value: 3
     varBol:
       value: 0
     varCol:
@@ -170,7 +170,7 @@ MonoBehaviour:
       value: {fileID: 0}
     varObj:
       value: {fileID: 0}
-  isExpanded: 0
+  isExpanded: 1
 --- !u!114 &3372188879395557563
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -350,7 +350,7 @@ MonoBehaviour:
       value: {fileID: 0}
     varObj:
       value: {fileID: 0}
-  isExpanded: 0
+  isExpanded: 1
 --- !u!114 &4979474201680761973
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -386,7 +386,7 @@ MonoBehaviour:
       value: {fileID: 0}
     varObj:
       value: {fileID: 0}
-  isExpanded: 0
+  isExpanded: 1
 --- !u!114 &6881985355181300557
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -422,7 +422,7 @@ MonoBehaviour:
       value: {fileID: 0}
     varObj:
       value: {fileID: 0}
-  isExpanded: 0
+  isExpanded: 1
 --- !u!114 &7295409868512899543
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -458,7 +458,7 @@ MonoBehaviour:
       value: {fileID: 0}
     varObj:
       value: {fileID: 0}
-  isExpanded: 0
+  isExpanded: 1
 --- !u!114 &8150926587816047654
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -508,14 +508,14 @@ MonoBehaviour:
   m_Name: 8nw75ju5
   m_EditorClassIdentifier: 
   variable:
-    name: BagTier
+    name: BagSize
     save: 0
     type: 2
     tags: 0
     varStr:
       value: 
     varNum:
-      value: 1
+      value: 5
     varBol:
       value: 0
     varCol:
@@ -530,4 +530,4 @@ MonoBehaviour:
       value: {fileID: 0}
     varObj:
       value: {fileID: 0}
-  isExpanded: 0
+  isExpanded: 1
