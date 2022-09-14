@@ -107,7 +107,7 @@ MonoBehaviour:
       value: {fileID: 0}
     varObj:
       value: {fileID: 0}
-  isExpanded: 0
+  isExpanded: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,8 +132,8 @@ MonoBehaviour:
   - {fileID: 3503918943306347937}
   - {fileID: -7375387218201724264}
   - {fileID: 2136642535955258238}
-  - {fileID: 8150926587816047654}
   - {fileID: -740964023402145791}
+  - {fileID: 8150926587816047654}
   - {fileID: 8946761955141095505}
 --- !u!114 &2136642535955258238
 MonoBehaviour:
@@ -155,7 +155,7 @@ MonoBehaviour:
     varStr:
       value: 
     varNum:
-      value: 3
+      value: 1
     varBol:
       value: 0
     varCol:
@@ -206,7 +206,7 @@ MonoBehaviour:
       value: {fileID: 0}
     varObj:
       value: {fileID: 0}
-  isExpanded: 1
+  isExpanded: 0
 --- !u!114 &3485727718099403367
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -350,7 +350,7 @@ MonoBehaviour:
       value: {fileID: 0}
     varObj:
       value: {fileID: 0}
-  isExpanded: 1
+  isExpanded: 0
 --- !u!114 &4979474201680761973
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -386,7 +386,7 @@ MonoBehaviour:
       value: {fileID: 0}
     varObj:
       value: {fileID: 0}
-  isExpanded: 1
+  isExpanded: 0
 --- !u!114 &6881985355181300557
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -422,7 +422,7 @@ MonoBehaviour:
       value: {fileID: 0}
     varObj:
       value: {fileID: 0}
-  isExpanded: 1
+  isExpanded: 0
 --- !u!114 &7295409868512899543
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -458,7 +458,7 @@ MonoBehaviour:
       value: {fileID: 0}
     varObj:
       value: {fileID: 0}
-  isExpanded: 1
+  isExpanded: 0
 --- !u!114 &8150926587816047654
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -515,7 +515,7 @@ MonoBehaviour:
     varStr:
       value: 
     varNum:
-      value: 5
+      value: 10
     varBol:
       value: 0
     varCol:

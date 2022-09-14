@@ -3,17 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class InventoryUIItem : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndDragHandler, IBeginDragHandler
+public class InventoryUIItem : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndDragHandler, IBeginDragHandler, IPointerClickHandler
 
 {
     private RectTransform rectTrans;
     private CanvasGroup canvasGroup;
+    [SerializeField]
+    private int slotNum;
     [SerializeField]
     private Canvas canvas;
 
     [SerializeField]
     Sprite defaultSprite;
 
+    private void OnEnable()
+    {
+        ActionManager.SellItemAction += SellItem;
+    }
+    private void OnDisable()
+    {
+        ActionManager.SellItemAction -= SellItem;
+    }
     private void Awake()
     {
         rectTrans = GetComponent<RectTransform>();
@@ -46,5 +56,17 @@ public class InventoryUIItem : MonoBehaviour, IPointerDownHandler, IDragHandler,
         //Debug.Log("OnPointerDown");
     }
 
- 
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if(eventData.button==PointerEventData.InputButton.Right)//include && shop window open bool
+        {
+            ActionManager.SellItemAction(1, 3);
+        }
+    }
+
+    private void SellItem(int i, int j)
+    {
+        Debug.Log(i +" and " + j);
+    }
+
 }
