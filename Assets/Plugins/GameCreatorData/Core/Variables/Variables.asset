@@ -92,7 +92,7 @@ MonoBehaviour:
     varStr:
       value: 
     varNum:
-      value: 1
+      value: 0
     varBol:
       value: 0
     varCol:
@@ -155,7 +155,7 @@ MonoBehaviour:
     varStr:
       value: 
     varNum:
-      value: 1
+      value: 0
     varBol:
       value: 0
     varCol:
@@ -206,7 +206,7 @@ MonoBehaviour:
       value: {fileID: 0}
     varObj:
       value: {fileID: 0}
-  isExpanded: 0
+  isExpanded: 1
 --- !u!114 &3485727718099403367
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -479,7 +479,7 @@ MonoBehaviour:
     varStr:
       value: 
     varNum:
-      value: 1
+      value: 2
     varBol:
       value: 0
     varCol:

@@ -24,33 +24,16 @@ public class PlayerEquipmentManager : MonoBehaviour
         switch (slotNum)
         {
             case 1: //pickaxe
-                if (bonus > (float)VariablesManager.GetGlobal("PickaxeTier"))
-                {
                     VariablesManager.SetGlobal("PickaxeTier", bonus);
-                }
-
                 break;
             case 2: //hammer
-                if (bonus > (float)VariablesManager.GetGlobal("HammerTier"))
-                {
                     VariablesManager.SetGlobal("HammerTier", bonus);
-                }
-
                 break;
-
             case 3: //gloves
-                if (bonus > (float)VariablesManager.GetGlobal("GlovesTier"))
-                {
-                    VariablesManager.SetGlobal("GlovesTier", bonus);
-                }
-
+                       VariablesManager.SetGlobal("GlovesTier", (float) 1/bonus);
                 break;
-
             case 4: //bagsize
-                if ((bonus+1)*10 > (float)VariablesManager.GetGlobal("BagSize"))
-                {
-                    VariablesManager.SetGlobal("BagSize", (bonus + 1) * 10);
-                }   
+                    VariablesManager.SetGlobal("BagSize", (bonus + 1) * 10);   
                 break; 
         }
 
