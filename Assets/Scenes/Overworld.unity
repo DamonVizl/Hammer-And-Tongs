@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1978,6 +1978,7 @@ GameObject:
   - component: {fileID: 294682717}
   - component: {fileID: 294682716}
   - component: {fileID: 294682715}
+  - component: {fileID: 294682719}
   m_Layer: 0
   m_Name: MoveToAction
   m_TagString: Untagged
@@ -2021,6 +2022,7 @@ MonoBehaviour:
   - {fileID: 294682717}
   - {fileID: 294682716}
   - {fileID: 294682715}
+  - {fileID: 294682719}
   executingIndex: -1
   isExecuting: 0
 --- !u!114 &294682715
@@ -2179,6 +2181,39 @@ Transform:
   m_Father: {fileID: 662792861}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &294682719
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294682712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1efa2e918f10d446697b122083e4c41f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isExpanded: 1
+  target:
+    target: 3
+    gameObject: {fileID: 599409729}
+    global:
+      allowTypesMask: 512
+      name: 
+    local:
+      allowTypesMask: 512
+      name: 
+      targetType: 2
+      targetObject: {fileID: 0}
+    list:
+      targetType: 3
+      targetObject: {fileID: 0}
+      select: 1
+      index: 0
+    eventChangeVariable:
+      m_PersistentCalls:
+        m_Calls: []
+  active: 1
 --- !u!1 &294712662
 GameObject:
   m_ObjectHideFlags: 0
@@ -2555,33 +2590,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1033379120, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
-      propertyPath: m_Pivot.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1033379120, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1033379120, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1033379120, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1033379120, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1120
-      objectReference: {fileID: 0}
-    - target: {fileID: 1033379120, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 125
-      objectReference: {fileID: 0}
-    - target: {fileID: 1033379120, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
-      propertyPath: m_AnchoredPosition.y
+    - target: {fileID: 599409729, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
+      propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 845898423, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1861352475532183474, guid: 704ac75a7190f2b43b8f45473227e3a2,
         type: 3}
@@ -4260,6 +4275,12 @@ Transform:
   m_Father: {fileID: 1659148702}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &599409729 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 599409729, guid: 704ac75a7190f2b43b8f45473227e3a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 384657327}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &603048246
 GameObject:
   m_ObjectHideFlags: 0
@@ -11120,9 +11141,6 @@ GameObject:
   - component: {fileID: 1474461302}
   - component: {fileID: 1474461297}
   - component: {fileID: 1474461298}
-  - component: {fileID: 1474461301}
-  - component: {fileID: 1474461299}
-  - component: {fileID: 1474461300}
   m_Layer: 0
   m_Name: WorkAction
   m_TagString: Untagged
@@ -11162,82 +11180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d5a50368374438dbff3af09a8fefb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions:
-  - {fileID: 1474461301}
-  - {fileID: 1474461300}
-  - {fileID: 1474461299}
+  actions: []
   executingIndex: -1
   isExecuting: 0
---- !u!114 &1474461299
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1474461296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6550f27470913457faef2f508a2dd80a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isExpanded: 1
---- !u!114 &1474461300
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1474461296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e88f419b6c3ec4fb8a354560d3cf13aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isExpanded: 1
-  variable:
-    variableType: 0
-    global:
-      allowTypesMask: 4
-      name: IronOre
-    local:
-      allowTypesMask: 4
-      name: 
-      targetType: 2
-      targetObject: {fileID: 0}
-    list:
-      targetType: 3
-      targetObject: {fileID: 0}
-      select: 1
-      index: 0
-  value: 1
---- !u!114 &1474461301
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1474461296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af8e08962fcd123419f59e452d565272, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isExpanded: 1
-  variable:
-    variableType: 0
-    global:
-      allowTypesMask: 4
-      name: GlovesTier
-    local:
-      allowTypesMask: 4
-      name: 
-      targetType: 2
-      targetObject: {fileID: 0}
-    list:
-      targetType: 3
-      targetObject: {fileID: 0}
-      select: 1
-      index: 0
 --- !u!4 &1474461302
 Transform:
   m_ObjectHideFlags: 0
@@ -11577,6 +11522,7 @@ GameObject:
   - component: {fileID: 1542831210}
   - component: {fileID: 1542831211}
   - component: {fileID: 1542831212}
+  - component: {fileID: 1542831214}
   m_Layer: 0
   m_Name: CancelWorkActions
   m_TagString: Untagged
@@ -11618,6 +11564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actions:
   - {fileID: 1542831212}
+  - {fileID: 1542831214}
   executingIndex: -1
   isExecuting: 0
 --- !u!114 &1542831212
@@ -11665,6 +11612,39 @@ Transform:
   m_Father: {fileID: 662792861}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1542831214
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542831209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1efa2e918f10d446697b122083e4c41f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isExpanded: 1
+  target:
+    target: 3
+    gameObject: {fileID: 599409729}
+    global:
+      allowTypesMask: 512
+      name: 
+    local:
+      allowTypesMask: 512
+      name: 
+      targetType: 2
+      targetObject: {fileID: 0}
+    list:
+      targetType: 3
+      targetObject: {fileID: 0}
+      select: 1
+      index: 0
+    eventChangeVariable:
+      m_PersistentCalls:
+        m_Calls: []
+  active: 0
 --- !u!1 &1547153562
 GameObject:
   m_ObjectHideFlags: 0

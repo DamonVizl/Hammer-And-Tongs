@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: 3r6b9yjj
   m_EditorClassIdentifier: 
   variable:
-    name: GoldIngots
+    name: GoldIngot
     save: 0
     type: 2
     tags: 0
     varStr:
       value: 
     varNum:
-      value: 0
+      value: 5
     varBol:
       value: 0
     varCol:
@@ -35,7 +35,7 @@ MonoBehaviour:
       value: {fileID: 0}
     varObj:
       value: {fileID: 0}
-  isExpanded: 0
+  isExpanded: 1
 --- !u!114 &-5804816288850183909
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -49,14 +49,14 @@ MonoBehaviour:
   m_Name: o9tdaa8m
   m_EditorClassIdentifier: 
   variable:
-    name: BronzeIngots
+    name: BronzeIngot
     save: 0
     type: 2
     tags: 0
     varStr:
       value: 
     varNum:
-      value: 0
+      value: 3
     varBol:
       value: 0
     varCol:
@@ -71,7 +71,7 @@ MonoBehaviour:
       value: {fileID: 0}
     varObj:
       value: {fileID: 0}
-  isExpanded: 0
+  isExpanded: 1
 --- !u!114 &-740964023402145791
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -191,7 +191,7 @@ MonoBehaviour:
     varStr:
       value: 
     varNum:
-      value: 0
+      value: 8
     varBol:
       value: 0
     varCol:
@@ -256,14 +256,14 @@ MonoBehaviour:
   m_Name: g6lh2979
   m_EditorClassIdentifier: 
   variable:
-    name: SteelIngots
+    name: SteelIngot
     save: 0
     type: 2
     tags: 0
     varStr:
       value: 
     varNum:
-      value: 0
+      value: 4
     varBol:
       value: 0
     varCol:
@@ -278,7 +278,7 @@ MonoBehaviour:
       value: {fileID: 0}
     varObj:
       value: {fileID: 0}
-  isExpanded: 0
+  isExpanded: 1
 --- !u!114 &3607602120203591505
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -292,14 +292,14 @@ MonoBehaviour:
   m_Name: e67122ob
   m_EditorClassIdentifier: 
   variable:
-    name: IronIngots
+    name: IronIngot
     save: 0
     type: 2
     tags: 0
     varStr:
       value: 
     varNum:
-      value: 0
+      value: 2
     varBol:
       value: 0
     varCol:
@@ -314,7 +314,7 @@ MonoBehaviour:
       value: {fileID: 0}
     varObj:
       value: {fileID: 0}
-  isExpanded: 0
+  isExpanded: 1
 --- !u!114 &4758747599255493218
 MonoBehaviour:
   m_ObjectHideFlags: 3

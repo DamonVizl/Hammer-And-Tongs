@@ -5,7 +5,7 @@ using System;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class ShopInteractable : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+public class ShopInteractable : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField]
     private int itemType;  // 1 is pickaxe, 2 is hammer, 3 is gloves, 4 is bag
@@ -15,22 +15,6 @@ public class ShopInteractable : MonoBehaviour, IPointerClickHandler, IPointerEnt
 
     [SerializeField]
     private Transform toolTip;
-
-    private TextMeshProUGUI descriptionText;
-    [SerializeField]
-    private string ItemDescription;
-
-    [SerializeField]
-    private int itemCost;
-
-    private TextMeshProUGUI itemCostText;
-
-    private void Start()
-    {
-        Debug.Log(toolTip.childCount);
-        itemCostText = toolTip.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
-        descriptionText= toolTip.GetChild(1).GetComponent<TextMeshProUGUI>();
-    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -59,22 +43,6 @@ public class ShopInteractable : MonoBehaviour, IPointerClickHandler, IPointerEnt
         
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        //this will bring up the tool tip and update the text to tell us the cost. 
-        Debug.Log("Entered the shop Icon");
-        toolTip.gameObject.SetActive(true);
-        toolTip.GetComponent<RectTransform>().anchoredPosition = this.transform.parent.GetComponent<RectTransform>().anchoredPosition;//this.gameObject.transform.GetComponent<RectTransform>().anchoredPosition;
-        descriptionText.text = (string)ItemDescription;
-        itemCostText.text = (string)itemCost.ToString();
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        Debug.Log("Exited the shop Icon");
-        //this will close the tool tip and clear the text
-        toolTip.gameObject.SetActive(false);
-    }
 }
 
 
