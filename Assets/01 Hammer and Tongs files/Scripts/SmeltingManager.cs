@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 using GameCreator.Variables;
 using UnityEngine.UI;
 using System;
+using System.Linq;
 
 public class SmeltingManager : MonoBehaviour, IPointerClickHandler
 {
@@ -25,13 +26,26 @@ public class SmeltingManager : MonoBehaviour, IPointerClickHandler
         //StartCoroutine(SliderStart());
 
     }
-
-    private void Update()
+    //forges the max amount of ingots based off the lowest number when divided. 
+    public void ForgeMax()
     {
-       // timer += Time.deltaTime;
+         List<float> dividedList = new List<float>();
+
+        if (iron != 0) { float i = Mathf.FloorToInt((float)VariablesManager.GetGlobal("IronOre") / iron); dividedList.Add(i); }
+        if (copper != 0) { float c = Mathf.FloorToInt((float)VariablesManager.GetGlobal("CopperOre") / copper); dividedList.Add(c); }
+        if (tin != 0) { float t = Mathf.FloorToInt((float)VariablesManager.GetGlobal("TinOre") / tin); dividedList.Add(t); }
+        if (carbon != 0) { float ca = Mathf.FloorToInt((float)VariablesManager.GetGlobal("CarbonOre") / carbon); dividedList.Add(ca); }
+        if (gold != 0) { float g = Mathf.FloorToInt((float)VariablesManager.GetGlobal("GoldOre") / gold); dividedList.Add(g); }
+
+         dividedList.Min();
+        Debug.Log(dividedList.Min());
+
+        StopAllCoroutines();
+        StartCoroutine( MultipleSmelting((int)dividedList.Min()));
     }
 
-    IEnumerator SmeltingCoolDown()
+
+IEnumerator SmeltingCoolDown()
     {
         //Debug.Log((float)VariablesManager.GetGlobal("GlovesTier"));
         timer = 0;
@@ -49,6 +63,27 @@ public class SmeltingManager : MonoBehaviour, IPointerClickHandler
       
 
 
+    }
+    //this here function loops through loopTimes doing the smeltingCoolDOwn coroutine that many times
+    IEnumerator MultipleSmelting(int loopTimes)
+    {
+        for (int i = 0; i<loopTimes; i++)
+        {
+            timer = 0;
+            if (CheckCanCraft(iron, copper, tin, carbon, gold))
+            {
+                while (timer < (float)VariablesManager.GetGlobal("GlovesTier"))
+                {
+                    SliderUpdate();
+                    yield return null;
+                }
+
+                AttemptCraft(iron, copper, tin, carbon, gold);
+                slider.value = 0;
+            }
+        }
+        
+       // yield return null;
     }
     private void SliderUpdate()
     {
@@ -69,7 +104,7 @@ public class SmeltingManager : MonoBehaviour, IPointerClickHandler
      }
 
 
-            public void AttemptCraft(int localIron, int localCopper, int localTin, int localCarbon, int localGold)
+    public void AttemptCraft(int localIron, int localCopper, int localTin, int localCarbon, int localGold)
     {
         if ((float)VariablesManager.GetGlobal("IronOre") >= localIron && (float)VariablesManager.GetGlobal("CopperOre") >= localCopper && (float)VariablesManager.GetGlobal("TinOre") >= localTin &&
             (float)VariablesManager.GetGlobal("CarbonOre") >= localCarbon && (float)VariablesManager.GetGlobal("GoldOre") >= localGold
