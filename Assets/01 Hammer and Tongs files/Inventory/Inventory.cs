@@ -13,7 +13,7 @@ public class Inventory : MonoBehaviour
 
     //array of the items in the inventory
     [SerializeField]
-    private ItemData[] items;
+    private Item[] items;
     //currIndex is the current spot in the inventory
     private int currIndex = 0;
 
@@ -33,21 +33,28 @@ public class Inventory : MonoBehaviour
     [Space]
     public VariableProperty storeInvoker = new VariableProperty();
 
-
+    private void OnEnable()
+    {
+        ActionManager.AddItem += AddItemToInventory;
+    }
+    private void OnDisable()
+    {
+        ActionManager.AddItem -= AddItemToInventory;
+    }
     public void Start()
     {
-        items = new ItemData[InventorySize];
+        items = new Item[InventorySize];
         sprites = new Image[InventorySize];
         EventDispatchManager.Instance.Subscribe(this.eventName, this.OnReceiveEvent);
         //this event is called whenever an item is swapped. its in the inventoryUISlot.cs class
-        EventDispatchManager.Instance.Subscribe("OnInventoryUIUpdatedOldSlot", this.ItemMovedFrom);
-        EventDispatchManager.Instance.Subscribe("OnInventoryUIUpdatedNewSlot", this.ItemMovedTo);
+        //EventDispatchManager.Instance.Subscribe("OnInventoryUIUpdatedOldSlot", this.ItemMovedFrom);
+        //EventDispatchManager.Instance.Subscribe("OnInventoryUIUpdatedNewSlot", this.ItemMovedTo);
 
-        //match the sprites array from the inventory slots
+  /*      //match the sprites array from the inventory slots
         for (int i = 0; i<InventorySize; i++) //should throw a catch in here for if the array is too big
         {
             sprites[i] = InventoryUI.transform.GetChild(i).GetChild(0).GetComponent<Image>();
-        }
+        }*/
         
     }
 
@@ -56,11 +63,27 @@ public class Inventory : MonoBehaviour
         this.storeInvoker.Set(invoker, invoker);
         //this.ExecuteTrigger(invoker);
         Debug.Log("I have picked up a: " + invoker.name);
-        this.AddItemToInventory(invoker);
+       // this.AddItemToInventory(invoker);
        
     }
-
-    public void AddItemToInventory(GameObject item)
+    public void AddItemToInventory(Item item)
+    {
+        currIndex = 0; // reset the array back to 0 to fill any empty slots
+        Debug.Log("Do i get into the add item function from the action push");
+        for(int i = 0; i<InventorySize; i++)
+        {
+            //Debug.Log("at slot, is: " + currIndex + items[i].name);
+            if(!items[i])
+            {
+                currIndex = i;
+                Debug.Log("current index (the first free inventory slot) is:" + currIndex);
+                items[currIndex] = item;
+                ActionManager.UpdateInventoryUI(currIndex, item);
+                return;
+            }
+        }
+    }
+/*    public void AddItemToInventory(GameObject item)
     {
         if (currIndex < InventorySize)
         {
@@ -68,8 +91,8 @@ public class Inventory : MonoBehaviour
             sprites[currIndex].sprite = item.GetComponent<ItemData>().GetSprite();
             currIndex++;
         }
-    }
-    public void ItemMovedFrom(GameObject item)
+    }*/
+/*    public void ItemMovedFrom(GameObject item)
     {
         Debug.Log("an item has been swapped from: " + item.name);
         swappedFrom = item.GetComponent<InventoryUISlot>().GetSlotNum();
@@ -87,7 +110,7 @@ public class Inventory : MonoBehaviour
         ItemData temp = items[swappedTo];
         items[swappedTo] = items[swappedFrom];
         items[swappedFrom] = temp;
-    }
+    }*/
     public void DropItem(GameObject item)
     {
         
