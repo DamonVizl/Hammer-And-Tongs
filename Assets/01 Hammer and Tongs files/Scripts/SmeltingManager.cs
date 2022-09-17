@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using GameCreator.Variables;
+using UnityEngine.UI;
+using System;
 
 public class SmeltingManager : MonoBehaviour, IPointerClickHandler
 {
@@ -12,21 +14,62 @@ public class SmeltingManager : MonoBehaviour, IPointerClickHandler
     [SerializeField] private int tin;
     [SerializeField] private int carbon;
     [SerializeField] private int gold;
+
+    [SerializeField] private Slider slider;
+
+    private float timer;
     public void OnPointerClick(PointerEventData eventData)
     {
         StopAllCoroutines();
         StartCoroutine(SmeltingCoolDown());
+        //StartCoroutine(SliderStart());
+
+    }
+
+    private void Update()
+    {
+       // timer += Time.deltaTime;
     }
 
     IEnumerator SmeltingCoolDown()
     {
-        Debug.Log((float)VariablesManager.GetGlobal("GlovesTier"));
-        yield return new WaitForSeconds((float) VariablesManager.GetGlobal("GlovesTier"));
-        AttemptCraft(iron, copper, tin, carbon, gold);
+        //Debug.Log((float)VariablesManager.GetGlobal("GlovesTier"));
+        timer = 0;
+        if (CheckCanCraft(iron, copper, tin, carbon, gold))
+        {
+            while (timer < (float)VariablesManager.GetGlobal("GlovesTier"))
+            {
+                SliderUpdate();
+                yield return null;
+            }
+
+            AttemptCraft(iron, copper, tin, carbon, gold);
+            slider.value = 0;
+        }
+      
+
 
     }
+    private void SliderUpdate()
+    {
+        Debug.Log("slider value" + slider.value);
+        slider.value = timer/ (float)VariablesManager.GetGlobal("GlovesTier");
+        timer += Time.deltaTime;
+    }
+    public bool CheckCanCraft(int localIron, int localCopper, int localTin, int localCarbon, int localGold)
+    {
+        if ((float)VariablesManager.GetGlobal("IronOre") >= localIron && (float)VariablesManager.GetGlobal("CopperOre") >= localCopper && (float)VariablesManager.GetGlobal("TinOre") >= localTin &&
+            (float)VariablesManager.GetGlobal("CarbonOre") >= localCarbon && (float)VariablesManager.GetGlobal("GoldOre") >= localGold
+            && (float)VariablesManager.GetGlobal(ingotName) < (float)VariablesManager.GetGlobal("BagSize"))
+        {
+            return true;
+        }
 
-    public void AttemptCraft(int localIron, int localCopper, int localTin, int localCarbon, int localGold)
+        else return false;
+     }
+
+
+            public void AttemptCraft(int localIron, int localCopper, int localTin, int localCarbon, int localGold)
     {
         if ((float)VariablesManager.GetGlobal("IronOre") >= localIron && (float)VariablesManager.GetGlobal("CopperOre") >= localCopper && (float)VariablesManager.GetGlobal("TinOre") >= localTin &&
             (float)VariablesManager.GetGlobal("CarbonOre") >= localCarbon && (float)VariablesManager.GetGlobal("GoldOre") >= localGold
