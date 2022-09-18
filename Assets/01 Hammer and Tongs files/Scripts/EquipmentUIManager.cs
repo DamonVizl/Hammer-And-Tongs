@@ -19,21 +19,21 @@ public class EquipmentUIManager : MonoBehaviour
     }
 
 
-    private void UpdateEquipmentUI(int itemType, int value)
+    private void UpdateEquipmentUI(int itemType, int tier)
     {
         switch (itemType)
         {
             case 1:
-                this.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = backGroundImages[value-1];
+                this.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = backGroundImages[tier-1];
                 break;
             case 2:
-                this.transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().sprite = backGroundImages[value - 1];
+                this.transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().sprite = backGroundImages[tier - 1];
                 break;
             case 3:
-                this.transform.GetChild(2).transform.GetChild(0).GetComponent<Image>().sprite = backGroundImages[value - 1];
+                this.transform.GetChild(2).transform.GetChild(0).GetComponent<Image>().sprite = backGroundImages[tier - 1];
                 break;
             case 4:
-                this.transform.GetChild(3).transform.GetChild(0).GetComponent<Image>().sprite = backGroundImages[value - 1];
+                this.transform.GetChild(3).transform.GetChild(0).GetComponent<Image>().sprite = backGroundImages[tier - 1];
                 break;
 
         }

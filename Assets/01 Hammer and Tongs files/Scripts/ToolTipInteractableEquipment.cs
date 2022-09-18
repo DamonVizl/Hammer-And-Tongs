@@ -20,13 +20,13 @@ public class ToolTipInteractableEquipment : MonoBehaviour, IPointerEnterHandler,
     private void Start()
     {
        // itemCostText = toolTip.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
-        descriptionText = toolTip.GetChild(1).GetComponent<TextMeshProUGUI>();
+        descriptionText = toolTip.GetChild(0).GetComponent<TextMeshProUGUI>();
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
         //this will bring up the tool tip and update the text to tell us the cost. 
         toolTip.gameObject.SetActive(true);
-        toolTip.GetComponent<RectTransform>().anchoredPosition = new Vector2(this.transform.parent.GetComponent<RectTransform>().anchoredPosition.x, this.transform.parent.GetComponent<RectTransform>().anchoredPosition.y+120) ;//this.gameObject.transform.GetComponent<RectTransform>().anchoredPosition;
+        toolTip.GetComponent<RectTransform>().anchoredPosition = new Vector2(this.transform.parent.GetComponent<RectTransform>().anchoredPosition.x, this.transform.parent.GetComponent<RectTransform>().anchoredPosition.y-120) ;//this.gameObject.transform.GetComponent<RectTransform>().anchoredPosition;
         descriptionText.text = (string)ItemDescription;
        // itemCostText.text = (string)itemCost.ToString();
     }

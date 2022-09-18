@@ -36,10 +36,12 @@ public class Inventory : MonoBehaviour
     private void OnEnable()
     {
         ActionManager.AddItem += AddItemToInventory;
+        
     }
     private void OnDisable()
     {
         ActionManager.AddItem -= AddItemToInventory;
+        
     }
     public void Start()
     {
@@ -116,9 +118,14 @@ public class Inventory : MonoBehaviour
         
     }
 
-    public void SellItem(GameObject item)
+    public void SellItem(int slot)
     {
-
+        if(items[slot])
+        {
+            ActionManager.SellItemAction(slot, items[slot].GetItemValue());
+            VariablesManager.SetGlobal("Coins", (float)VariablesManager.GetGlobal("Coins") + items[slot].GetItemValue());
+            items[slot] = null;
+        }
     }
 
 }
