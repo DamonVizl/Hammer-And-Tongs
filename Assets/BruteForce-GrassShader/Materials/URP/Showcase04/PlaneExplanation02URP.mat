@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PlaneExplanation02URP
-  m_Shader: {fileID: 4800000, guid: bf1b67d8223379749a0a88d47d0a7154, type: 3}
+  m_Shader: {fileID: 10606, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: USE_S
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -112,19 +112,28 @@ Material:
     - _RimPower: 3.15
     - _ShadowFuziness: 1
     - _ShadowMax: 0
+    - _ShadowStrength: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _SquashAmount: 1
     - _SrcBlend: 1
     - _TilingN1: 4.24
     - _TilingN2: 0.05
     - _TilingN3: 0.65
+    - _TranslucencyViewDependency: 0.7
     - _UVSec: 0
+    - _UseAmbientLight: 0
     - _UsePR: 0
     - _UseRT: 0
     - _UseShadow: 1
     - _UseShadowCast: 0
+    - _UseTP: 0
+    - _UseVR: 0
+    - _UseWC: 0
     - _WindForce: 0.22
     - _WindMovement: 0.2
+    - _WorldRotation: 0
+    - _WorldScale: 10
     - _ZWrite: 1
     - __NumberOfStacks: 17
     m_Colors:
@@ -136,3 +145,7 @@ Material:
     - _ProjectedShadowColor: {r: 0.4528302, g: 0.42296267, b: 0.044855822, a: 1}
     - _RimColor: {r: 0.14566667, g: 0.184, b: 0.09008333, a: 1}
     - _SelfShadowColor: {r: 0.3026154, g: 0.46226418, b: 0, a: 1}
+    - _TranslucencyColor: {r: 0.73, g: 0.85, b: 0.40999997, a: 1}
+    - _TreeInstanceColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TreeInstanceScale: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
