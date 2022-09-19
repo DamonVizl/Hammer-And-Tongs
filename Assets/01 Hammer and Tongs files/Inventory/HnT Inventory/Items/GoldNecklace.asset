@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GoldNecklace
   m_EditorClassIdentifier: 
   itemName: A delicate gold necklace \n Fetches a high price.
-  itemValue: 100
+  itemValue: 200
   icon: {fileID: 21300000, guid: df5d059f8f93e0849a176550345376d9, type: 3}

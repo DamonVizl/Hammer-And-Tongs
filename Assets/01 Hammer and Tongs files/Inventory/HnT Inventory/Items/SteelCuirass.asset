@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SteelCuirass
   m_EditorClassIdentifier: 
   itemName: A sturdy steel cuirass \n It is built well, and you can tell
-  itemValue: 50
+  itemValue: 100
   icon: {fileID: 21300000, guid: d863229469061e742a1db931d2276498, type: 3}
