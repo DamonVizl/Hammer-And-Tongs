@@ -87,7 +87,7 @@ IEnumerator SmeltingCoolDown()
     }
     private void SliderUpdate()
     {
-        Debug.Log("slider value" + slider.value);
+        
         slider.value = timer/ (float)VariablesManager.GetGlobal("GlovesTier");
         timer += Time.deltaTime;
     }
@@ -110,7 +110,7 @@ IEnumerator SmeltingCoolDown()
             (float)VariablesManager.GetGlobal("CarbonOre") >= localCarbon && (float)VariablesManager.GetGlobal("GoldOre") >= localGold
             && (float)VariablesManager.GetGlobal(ingotName) < (float)VariablesManager.GetGlobal("BagSize")) 
         {
-            Debug.Log("Crafting that ingot");
+            
             VariablesManager.SetGlobal(ingotName, (float)VariablesManager.GetGlobal(ingotName)+1) ;
             VariablesManager.SetGlobal("IronOre", (float)VariablesManager.GetGlobal("IronOre")-localIron);
             VariablesManager.SetGlobal("CopperOre", (float)VariablesManager.GetGlobal("CopperOre") - localCopper);

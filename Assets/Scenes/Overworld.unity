@@ -7207,6 +7207,14 @@ PrefabInstance:
       propertyPath: value
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 238801929, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
+      propertyPath: inv
+      value: 
+      objectReference: {fileID: 1343697847}
+    - target: {fileID: 238801929, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
+      propertyPath: itemTier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 276551088, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
       propertyPath: tier
       value: 1
@@ -7292,6 +7300,14 @@ PrefabInstance:
       propertyPath: ItemDescription
       value: Can hold 40 ores and ingots
       objectReference: {fileID: 0}
+    - target: {fileID: 722253747, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
+      propertyPath: inv
+      value: 
+      objectReference: {fileID: 1343697847}
+    - target: {fileID: 722253747, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
+      propertyPath: itemTier
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 891394440, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
       propertyPath: itemCost
       value: 500
@@ -7323,6 +7339,14 @@ PrefabInstance:
     - target: {fileID: 958148596, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
       propertyPath: ItemDescription
       value: Lets you craft steel equipment
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317051450, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
+      propertyPath: inv
+      value: 
+      objectReference: {fileID: 1343697847}
+    - target: {fileID: 1317051450, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
+      propertyPath: itemTier
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1351532047, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
       propertyPath: tier
@@ -7358,8 +7382,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1601604886, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1776033792, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
+      propertyPath: inv
+      value: 
+      objectReference: {fileID: 1343697847}
     - target: {fileID: 2100475297, guid: 704ac75a7190f2b43b8f45473227e3a2, type: 3}
       propertyPath: tier
       value: 3

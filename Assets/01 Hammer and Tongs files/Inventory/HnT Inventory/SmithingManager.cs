@@ -10,6 +10,8 @@ using System.Linq;
 public class SmithingManager : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private Item thisItem;
+    [SerializeField] private Inventory inv;
+    [SerializeField] private int itemTier;
     [SerializeField] private int ironIngot;
     [SerializeField] private int bronzeIngot;
     [SerializeField] private int steelIngot;
@@ -23,17 +25,24 @@ public class SmithingManager : MonoBehaviour, IPointerClickHandler
     public void AttemptCraft(int localIron, int localBronze, int localSteel, int localGold)
     {
         if ((float)VariablesManager.GetGlobal("IronIngot") >= localIron && (float)VariablesManager.GetGlobal("BronzeIngot") >= localBronze && (float)VariablesManager.GetGlobal("SteelIngot") >= localSteel &&
-              (float)VariablesManager.GetGlobal("GoldIngot") >= localGold)
+              (float)VariablesManager.GetGlobal("GoldIngot") >= localGold && itemTier <= (float) VariablesManager.GetGlobal("HammerTier"))
             //check to see if inventory is full
         {
-            Debug.Log("Crafting that ingot");
-           // VariablesManager.SetGlobal(ingotName, (float)VariablesManager.GetGlobal(ingotName) + 1);
-            VariablesManager.SetGlobal("IronIngot", (float)VariablesManager.GetGlobal("IronIngot") - localIron);
-            VariablesManager.SetGlobal("BronzeIngot", (float)VariablesManager.GetGlobal("BronzeIngot") - localBronze);
-            VariablesManager.SetGlobal("SteelIngot", (float)VariablesManager.GetGlobal("SteelIngot") - localSteel);
-            VariablesManager.SetGlobal("GoldIngot", (float)VariablesManager.GetGlobal("GoldIngot") - localGold);
+            if (inv.CheckIfFull())
+            {
+                return;
+            }
+            else
+            {
+                Debug.Log("Crafting that ingot");
+                // VariablesManager.SetGlobal(ingotName, (float)VariablesManager.GetGlobal(ingotName) + 1);
+                VariablesManager.SetGlobal("IronIngot", (float)VariablesManager.GetGlobal("IronIngot") - localIron);
+                VariablesManager.SetGlobal("BronzeIngot", (float)VariablesManager.GetGlobal("BronzeIngot") - localBronze);
+                VariablesManager.SetGlobal("SteelIngot", (float)VariablesManager.GetGlobal("SteelIngot") - localSteel);
+                VariablesManager.SetGlobal("GoldIngot", (float)VariablesManager.GetGlobal("GoldIngot") - localGold);
 
-            ActionManager.AddItem(thisItem);
+                ActionManager.AddItem(thisItem);
+            }
 
         }
         else

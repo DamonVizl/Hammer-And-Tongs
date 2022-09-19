@@ -85,6 +85,21 @@ public class Inventory : MonoBehaviour
             }
         }
     }
+
+    public bool CheckIfFull()
+    {
+        currIndex = 0;
+        for (int i = 0; i < InventorySize; i++)
+        {
+            //Debug.Log("at slot, is: " + currIndex + items[i].name);
+            if (!items[i])
+            {
+                return false;
+            }
+        }
+        Debug.Log("Inventory full");
+        return true;
+    }
 /*    public void AddItemToInventory(GameObject item)
     {
         if (currIndex < InventorySize)
