@@ -8,9 +8,10 @@ public class ActionManager : MonoBehaviour
 {
     public static Action<int, int> SellItemAction; //first int slotNum, second int value
     public static Action<int, int> BuyItemAction;
+    public static Action<int> StopOtherSmeltingAction;
 
-    public static Action<Item> AddItem;
-    public static Action<int, Item> UpdateInventoryUI;
+    public static Action<Item> AddItemAction;
+    public static Action<int, Item> UpdateInventoryUIAction;
     
 
 }

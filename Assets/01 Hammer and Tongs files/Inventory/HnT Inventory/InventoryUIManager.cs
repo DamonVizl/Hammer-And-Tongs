@@ -9,12 +9,12 @@ public class InventoryUIManager : MonoBehaviour
     private Sprite defaultSprite;
     private void OnEnable()
     {
-        ActionManager.UpdateInventoryUI += UpdateUI;
+        ActionManager.UpdateInventoryUIAction += UpdateUI;
         ActionManager.SellItemAction += RemoveFromUI;
     }
     private void OnDisable()
     {
-        ActionManager.UpdateInventoryUI -= UpdateUI;
+        ActionManager.UpdateInventoryUIAction -= UpdateUI;
         ActionManager.SellItemAction -= RemoveFromUI;
     }
 

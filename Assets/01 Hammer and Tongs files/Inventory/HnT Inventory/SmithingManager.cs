@@ -6,6 +6,8 @@ using GameCreator.Variables;
 using UnityEngine.UI;
 using System;
 using System.Linq;
+using GameCreator.Core;
+using UnityEngine.Audio;
 
 public class SmithingManager : MonoBehaviour, IPointerClickHandler
 {
@@ -17,6 +19,14 @@ public class SmithingManager : MonoBehaviour, IPointerClickHandler
     [SerializeField] private int steelIngot;
     [SerializeField] private int goldIngot;
 
+    //audio
+    [SerializeField] private AudioClip audioClip;
+    private AudioMixerGroup audioMixer;
+
+    private void Start()
+    {
+        audioMixer = DatabaseGeneral.Load().soundAudioMixer;
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         AttemptCraft(ironIngot, bronzeIngot, steelIngot, goldIngot);
@@ -41,7 +51,9 @@ public class SmithingManager : MonoBehaviour, IPointerClickHandler
                 VariablesManager.SetGlobal("SteelIngot", (float)VariablesManager.GetGlobal("SteelIngot") - localSteel);
                 VariablesManager.SetGlobal("GoldIngot", (float)VariablesManager.GetGlobal("GoldIngot") - localGold);
 
-                ActionManager.AddItem(thisItem);
+                ActionManager.AddItemAction(thisItem);
+                //play audio sound
+                AudioManager.Instance.PlaySound2D(audioClip, 0, 0.5f, audioMixer);
             }
 
         }

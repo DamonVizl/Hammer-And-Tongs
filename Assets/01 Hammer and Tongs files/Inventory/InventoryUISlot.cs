@@ -19,6 +19,8 @@ public class InventoryUISlot : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        //this could have fired an event.  ah well.
+
         if( (bool)(VariablesManager.GetGlobal("isShopOpen")))
         {
             inv.SellItem(slotNum);

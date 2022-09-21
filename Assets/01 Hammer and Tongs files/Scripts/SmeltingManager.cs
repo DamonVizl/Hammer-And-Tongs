@@ -6,22 +6,45 @@ using GameCreator.Variables;
 using UnityEngine.UI;
 using System;
 using System.Linq;
+using GameCreator.Core;
+using UnityEngine.Audio;
 
 public class SmeltingManager : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private string ingotName;
+    [SerializeField] private int slotNum;
     [SerializeField] private int iron;
     [SerializeField] private int copper;
     [SerializeField] private int tin;
     [SerializeField] private int carbon;
     [SerializeField] private int gold;
 
+    [SerializeField] AudioClip audioClip;
+    private AudioMixerGroup audioMixer;
+
     [SerializeField] private Slider slider;
 
     private float timer;
+
+    void Start()
+    {
+        audioMixer = DatabaseGeneral.Load().soundAudioMixer;
+    }
+
+    private void OnEnable()
+    {
+        ActionManager.StopOtherSmeltingAction += CheckStopCrafting;
+    }
+
+    private void OnDisable()
+    {
+        ActionManager.StopOtherSmeltingAction -= CheckStopCrafting;
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         StopAllCoroutines();
+        //stop other coroutines (so that you can only forge one at a time)
+        ActionManager.StopOtherSmeltingAction(slotNum);
         StartCoroutine(SmeltingCoolDown());
         //StartCoroutine(SliderStart());
 
@@ -41,6 +64,7 @@ public class SmeltingManager : MonoBehaviour, IPointerClickHandler
         Debug.Log(dividedList.Min());
 
         StopAllCoroutines();
+        ActionManager.StopOtherSmeltingAction(slotNum);
         StartCoroutine( MultipleSmelting((int)dividedList.Min()));
     }
 
@@ -85,6 +109,16 @@ IEnumerator SmeltingCoolDown()
         
        // yield return null;
     }
+    private void CheckStopCrafting(int slotNum)
+    {
+        if(this.slotNum != slotNum)
+        {
+            Debug.Log("I have been told to stop smelting");
+            StopAllCoroutines();
+            slider.value = 0;
+        }
+    }
+
     private void SliderUpdate()
     {
         
@@ -117,6 +151,9 @@ IEnumerator SmeltingCoolDown()
             VariablesManager.SetGlobal("TinOre", (float)VariablesManager.GetGlobal("TinOre") - localTin);
             VariablesManager.SetGlobal("CarbonOre", (float)VariablesManager.GetGlobal("CarbonOre") - localCarbon);
             VariablesManager.SetGlobal("GoldOre", (float)VariablesManager.GetGlobal("GoldOre") - localGold);
+
+            AudioManager.Instance.StopAllSounds();
+            AudioManager.Instance.PlaySound2D(audioClip, 0, 0.5f, audioMixer);
 
         }
         else

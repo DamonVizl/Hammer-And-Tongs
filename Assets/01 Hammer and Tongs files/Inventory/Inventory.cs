@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using GameCreator.Core;
 using GameCreator.Variables;
+using UnityEngine.Audio;
 
 //the inventory manages the array of inventory items. it interfaces with the inventory UI and the inventory UI slots and Inventory UI items in turn. 
 public class Inventory : MonoBehaviour
@@ -27,6 +28,10 @@ public class Inventory : MonoBehaviour
     int swappedFrom;
     int swappedTo;
 
+    //audio
+    [SerializeField] private AudioClip[] audioClips;
+    private AudioMixerGroup audioMixer;
+
 
     //variables for the GC event management
     [EventName] public string eventName = "my-event";
@@ -35,19 +40,21 @@ public class Inventory : MonoBehaviour
 
     private void OnEnable()
     {
-        ActionManager.AddItem += AddItemToInventory;
+        ActionManager.AddItemAction += AddItemToInventory;
         
     }
     private void OnDisable()
     {
-        ActionManager.AddItem -= AddItemToInventory;
+        ActionManager.AddItemAction -= AddItemToInventory;
         
     }
     public void Start()
     {
+        audioMixer = DatabaseGeneral.Load().soundAudioMixer;
         items = new Item[InventorySize];
         sprites = new Image[InventorySize];
         EventDispatchManager.Instance.Subscribe(this.eventName, this.OnReceiveEvent);
+
         //this event is called whenever an item is swapped. its in the inventoryUISlot.cs class
         //EventDispatchManager.Instance.Subscribe("OnInventoryUIUpdatedOldSlot", this.ItemMovedFrom);
         //EventDispatchManager.Instance.Subscribe("OnInventoryUIUpdatedNewSlot", this.ItemMovedTo);
@@ -80,7 +87,7 @@ public class Inventory : MonoBehaviour
                 currIndex = i;
                 Debug.Log("current index (the first free inventory slot) is:" + currIndex);
                 items[currIndex] = item;
-                ActionManager.UpdateInventoryUI(currIndex, item);
+                ActionManager.UpdateInventoryUIAction(currIndex, item);
                 return;
             }
         }
@@ -140,7 +147,16 @@ public class Inventory : MonoBehaviour
             ActionManager.SellItemAction(slot, items[slot].GetItemValue());
             VariablesManager.SetGlobal("Coins", (float)VariablesManager.GetGlobal("Coins") + items[slot].GetItemValue());
             items[slot] = null;
+            //play audio sound
+            PlayRandomCoinSound();
+            
         }
+    }
+
+    private void PlayRandomCoinSound()
+    {
+        int soundToPlay = (int) Random.Range(0, audioClips.Length);
+        AudioManager.Instance.PlaySound2D(audioClips[soundToPlay], 0, 0.5f, audioMixer);
     }
 
 }

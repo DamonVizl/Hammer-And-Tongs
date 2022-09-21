@@ -17,6 +17,7 @@
         public CameraMotor cameraMotor;
 
         public TargetGameObject anchor = new TargetGameObject(TargetGameObject.Target.Invoker);
+        public Vector3 anchorOffset = new Vector3(); //damon added this -
         public TargetDirection lookAt = new TargetDirection(TargetDirection.Target.Player);
 
         // EXECUTABLE: ----------------------------------------------------------------------------
@@ -28,6 +29,7 @@
             {
                 CameraMotorTypeFollow followMotor = (CameraMotorTypeFollow)motor.cameraMotorType;
                 followMotor.anchor = this.anchor;
+                followMotor.anchorOffset = this.anchorOffset; //damon added this - this line assigns the offset made in the inspector to the actual camera motor. 
                 followMotor.lookAt = this.lookAt;
             }
 
@@ -49,6 +51,7 @@
         private SerializedProperty spCameraMotor;
 
         private SerializedProperty spAnchor;
+        private SerializedProperty spAnchorOffset; //damon added this - i dont even understand these that well. but i assume it has to be in there
         private SerializedProperty spLookAt;
 
 		// INSPECTOR METHODS: ---------------------------------------------------------------------
@@ -69,6 +72,7 @@
             this.spCameraMotor = this.serializedObject.FindProperty("cameraMotor");
 
             this.spAnchor = this.serializedObject.FindProperty("anchor");
+            this.spAnchorOffset = this.serializedObject.FindProperty("anchorOffset"); //damon added this - i dont even understand these that well. but i assume it has to be in there
             this.spLookAt = this.serializedObject.FindProperty("lookAt");
 		}
 
@@ -77,6 +81,7 @@
             this.spMainCameraMotor = null;
             this.spCameraMotor = null;
             this.spAnchor = null;
+            this.spAnchorOffset = null; //damon added this - i dont even understand these that well. but i assume it has to be in there
             this.spLookAt = null;
 		}
 
@@ -91,6 +96,7 @@
             EditorGUILayout.Space();
 
             EditorGUILayout.PropertyField(this.spAnchor);
+            EditorGUILayout.PropertyField(this.spAnchorOffset); //damon added this - Pretty sure this one is responsible for drawing it to the GUI in the editor. 
             EditorGUILayout.PropertyField(this.spLookAt);
 			this.serializedObject.ApplyModifiedProperties();
 		}
