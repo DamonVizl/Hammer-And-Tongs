@@ -19,6 +19,10 @@ public class SmithingManager : MonoBehaviour, IPointerClickHandler
     [SerializeField] private int steelIngot;
     [SerializeField] private int goldIngot;
 
+    //error messages
+    string invFullErrorString = "The inventory is full";
+    string insufficientResources = "Not enough ingots";
+
     //audio
     [SerializeField] private AudioClip audioClip;
     private AudioMixerGroup audioMixer;
@@ -40,6 +44,9 @@ public class SmithingManager : MonoBehaviour, IPointerClickHandler
         {
             if (inv.CheckIfFull())
             {
+                ActionManager.DisplayErrorMessage(invFullErrorString);
+                //ActionErrorMessage.InstantExecute()
+               
                 return;
             }
             else
@@ -60,6 +67,7 @@ public class SmithingManager : MonoBehaviour, IPointerClickHandler
         else
         {
             Debug.Log("don't have enough resources to craft that");
+            ActionManager.DisplayErrorMessage(insufficientResources);
             //put in a gamrplay visual of this.
         }
     }

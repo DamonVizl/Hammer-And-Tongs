@@ -12,6 +12,7 @@ public class ActionManager : MonoBehaviour
 
     public static Action<Item> AddItemAction;
     public static Action<int, Item> UpdateInventoryUIAction;
-    
+
+    public static Action<string> DisplayErrorMessage;
 
 }

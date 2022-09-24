@@ -26,6 +26,11 @@ public class SmeltingManager : MonoBehaviour, IPointerClickHandler
 
     private float timer;
 
+    //error strings
+    string bagFullErrorString = "The bag is full";
+    string insufficientResources = "Not enough ore";
+    string cannotCraftString = "Cannot craft that";
+
     void Start()
     {
         audioMixer = DatabaseGeneral.Load().soundAudioMixer;
@@ -63,6 +68,10 @@ public class SmeltingManager : MonoBehaviour, IPointerClickHandler
          dividedList.Min();
         Debug.Log(dividedList.Min());
 
+        if(dividedList.Min() == 0)
+        {
+            ActionManager.DisplayErrorMessage(cannotCraftString);
+        }
         StopAllCoroutines();
         ActionManager.StopOtherSmeltingAction(slotNum);
         StartCoroutine( MultipleSmelting((int)dividedList.Min()));
@@ -84,9 +93,6 @@ IEnumerator SmeltingCoolDown()
             AttemptCraft(iron, copper, tin, carbon, gold);
             slider.value = 0;
         }
-      
-
-
     }
     //this here function loops through loopTimes doing the smeltingCoolDOwn coroutine that many times
     IEnumerator MultipleSmelting(int loopTimes)
@@ -134,7 +140,11 @@ IEnumerator SmeltingCoolDown()
             return true;
         }
 
-        else return false;
+        else
+        {
+            ActionManager.DisplayErrorMessage(cannotCraftString);
+            return false;
+        }
      }
 
 
@@ -156,10 +166,16 @@ IEnumerator SmeltingCoolDown()
             AudioManager.Instance.PlaySound2D(audioClip, 0, 0.5f, audioMixer);
 
         }
+        else if ((float)VariablesManager.GetGlobal(ingotName) >= (float)VariablesManager.GetGlobal("BagSize"))
+        {
+            Debug.Log("bag full");
+            ActionManager.DisplayErrorMessage(bagFullErrorString);
+            //put in a gamrplay visual of this.
+        }
         else
         {
-            Debug.Log("don't have enough resources to craft that");
-            //put in a gamrplay visual of this.
+            Debug.Log("not enough resources");
+            ActionManager.DisplayErrorMessage(insufficientResources);
         }
     }
 }

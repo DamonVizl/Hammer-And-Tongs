@@ -3,6 +3,8 @@
     using UnityEngine;
     using GameCreator.Core;
     using GameCreator.Core.Hooks;
+    using Unity;
+
 
     [AddComponentMenu("Game Creator/Characters/Player Character", 100)]
     public class PlayerCharacter : Character
@@ -195,9 +197,9 @@
             {
                 //damon - this is where i need to put the return to default state
                 this.GetCharacterAnimator().ResetState(0f, CharacterAnimation.Layer.Layer1);
-                
-                //I need to reach in and cancel actions, because I've used restart actions. 
 
+                //I need to reach in and cancel actions, because I've used restart actions. 
+                
                 //damon - this code is pretty fuckky....
 
                 //ActionCancelActions actionCancelActions; 

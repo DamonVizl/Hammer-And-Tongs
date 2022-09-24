@@ -12,7 +12,9 @@ public class TextFaceCamera : MonoBehaviour
     private void Start()
     {
         playerT = HookPlayer.Instance.transform.position;
+        this.transform.position = new Vector3 (playerT.x, 1.5f,playerT.z);
         this.transform.rotation = HookCamera.Instance.transform.rotation;
+        
     }
 
 
