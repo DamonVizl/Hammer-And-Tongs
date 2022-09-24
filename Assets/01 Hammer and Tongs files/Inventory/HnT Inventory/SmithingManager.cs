@@ -66,7 +66,6 @@ public class SmithingManager : MonoBehaviour, IPointerClickHandler
         }
         else
         {
-            Debug.Log("don't have enough resources to craft that");
             ActionManager.DisplayErrorMessage(insufficientResources);
             //put in a gamrplay visual of this.
         }

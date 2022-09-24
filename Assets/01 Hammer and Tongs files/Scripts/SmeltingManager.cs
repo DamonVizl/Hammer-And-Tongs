@@ -119,7 +119,6 @@ IEnumerator SmeltingCoolDown()
     {
         if(this.slotNum != slotNum)
         {
-            Debug.Log("I have been told to stop smelting");
             StopAllCoroutines();
             slider.value = 0;
         }
@@ -168,13 +167,11 @@ IEnumerator SmeltingCoolDown()
         }
         else if ((float)VariablesManager.GetGlobal(ingotName) >= (float)VariablesManager.GetGlobal("BagSize"))
         {
-            Debug.Log("bag full");
             ActionManager.DisplayErrorMessage(bagFullErrorString);
             //put in a gamrplay visual of this.
         }
         else
         {
-            Debug.Log("not enough resources");
             ActionManager.DisplayErrorMessage(insufficientResources);
         }
     }
