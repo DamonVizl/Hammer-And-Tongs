@@ -264,7 +264,7 @@ MonoBehaviour:
     varStr:
       value: 
     varNum:
-      value: 3000
+      value: 50
     varBol:
       value: 0
     varCol:
@@ -336,7 +336,7 @@ MonoBehaviour:
     varStr:
       value: 
     varNum:
-      value: 50
+      value: 0
     varBol:
       value: 0
     varCol:

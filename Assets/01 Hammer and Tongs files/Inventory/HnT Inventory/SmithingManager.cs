@@ -19,6 +19,7 @@ public class SmithingManager : MonoBehaviour, IPointerClickHandler
     [SerializeField] private int steelIngot;
     [SerializeField] private int goldIngot;
 
+
     //error messages
     string invFullErrorString = "The inventory is full";
     string insufficientResources = "Not enough ingots";
@@ -27,6 +28,11 @@ public class SmithingManager : MonoBehaviour, IPointerClickHandler
     [SerializeField] private AudioClip audioClip;
     private AudioMixerGroup audioMixer;
 
+    //getters
+    public int GetSellValue()
+    {
+        return thisItem.GetItemValue();
+    }
     private void Start()
     {
         audioMixer = DatabaseGeneral.Load().soundAudioMixer;
